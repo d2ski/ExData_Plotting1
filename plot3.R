@@ -15,7 +15,7 @@ plot(data$datetime, data$submetering1, ylab = "Energy sub metering", xlab = "", 
 lines(data$datetime, data$submetering1, col = "black")
 lines(data$datetime, data$submetering2, col = "red")
 lines(data$datetime, data$submetering3, col = "blue")
-legend("topright", lty = 1, lwd = 1, y.intersp = 0.5, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", lty = 1, lwd = 1, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 dev.copy(png, file = "plot3.png")
 dev.off()
