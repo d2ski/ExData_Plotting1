@@ -1,3 +1,6 @@
+Sys.setlocale("LC_TIME","English_United States.1252")
+
+
 data <- read.table("./household_power_consumption.txt", sep = ";", na.strings = "?",
                 colClasses = c("character", "character", "numeric", "numeric", "numeric",
                                "numeric", "numeric", "numeric", "numeric"),
@@ -11,6 +14,9 @@ data$date <- as.Date(data$date, format = "%d/%m/%Y")
 data$time <- strptime(data$time, "%H:%M:%S")
 data$datetime <- strptime(data$datetime, "%d/%m/%Y %H:%M:%S")
 
+png(file = "plot1.png")
+par(mfrow = c(1,1))
+
 hist(data$globalactivepower, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
-dev.copy(png, file = "plot1.png")
+
 dev.off()
